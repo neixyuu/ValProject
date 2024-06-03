@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "63436674174",
+    "project_id": "finalproject-f2a54",
+    "storage_bucket": "finalproject-f2a54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63436674174:android:7d051c140d487e93c9f42f",
+        "android_client_info": {
+          "package_name": "com.mycompany.valproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqL9Qt-c1MFDwPm7RAGITU76Tzgfmn3Q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
