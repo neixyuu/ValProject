@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -124,9 +125,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
-          name: 'prod',
-          path: '/prod',
-          builder: (context, params) => ProdWidget(),
+          name: 'Favorite',
+          path: '/favorite',
+          builder: (context, params) => FavoriteWidget(),
+        ),
+        FFRoute(
+          name: 'Forum',
+          path: '/forum',
+          builder: (context, params) => ForumWidget(),
+        ),
+        FFRoute(
+          name: 'locationPage',
+          path: '/locationPage',
+          builder: (context, params) => LocationPageWidget(),
+        ),
+        FFRoute(
+          name: 'posts',
+          path: '/posts',
+          builder: (context, params) => PostsWidget(),
+        ),
+        FFRoute(
+          name: 'reportHistory',
+          path: '/reportHistory',
+          builder: (context, params) => ReportHistoryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -247,6 +268,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -265,6 +287,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
