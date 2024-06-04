@@ -13,6 +13,7 @@ import 'schema/favorites_record.dart';
 import 'schema/sites_record.dart';
 import 'schema/forum_record.dart';
 import 'schema/locations_record.dart';
+import 'schema/weapon_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -29,6 +30,7 @@ export 'schema/favorites_record.dart';
 export 'schema/sites_record.dart';
 export 'schema/forum_record.dart';
 export 'schema/locations_record.dart';
+export 'schema/weapon_record.dart';
 
 /// Functions to query MapsRecords (as a Stream and as a Future).
 Future<int> queryMapsRecordCount({
@@ -324,6 +326,43 @@ Future<List<LocationsRecord>> queryLocationsRecordOnce({
     queryCollectionOnce(
       LocationsRecord.collection,
       LocationsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query WeaponRecords (as a Stream and as a Future).
+Future<int> queryWeaponRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      WeaponRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<WeaponRecord>> queryWeaponRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      WeaponRecord.collection,
+      WeaponRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<WeaponRecord>> queryWeaponRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      WeaponRecord.collection,
+      WeaponRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

@@ -71,4 +71,10 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInSiteAppstate(int _index, SitesDatatypeStruct _value) {
     _siteAppstate.insert(_index, _value);
   }
+
+  bool _isFavorite = false;
+  bool get isFavorite => _isFavorite;
+  set isFavorite(bool _value) {
+    _isFavorite = _value;
+  }
 }

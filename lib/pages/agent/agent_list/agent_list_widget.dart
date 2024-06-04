@@ -237,6 +237,7 @@ class _AgentListWidgetState extends State<AgentListWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
+                                                          fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),

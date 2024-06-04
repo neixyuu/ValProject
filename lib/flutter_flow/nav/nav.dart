@@ -148,6 +148,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'reportHistory',
           path: '/reportHistory',
           builder: (context, params) => ReportHistoryWidget(),
+        ),
+        FFRoute(
+          name: 'Weapon',
+          path: '/weapon',
+          builder: (context, params) => WeaponWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

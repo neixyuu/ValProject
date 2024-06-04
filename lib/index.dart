@@ -15,3 +15,4 @@ export '/pages/maps/location_page/location_page_widget.dart'
 export '/pages/posts/posts_widget.dart' show PostsWidget;
 export '/pages/profile/report_history/report_history_widget.dart'
     show ReportHistoryWidget;
+export '/pages/maps/weapon/weapon_widget.dart' show WeaponWidget;

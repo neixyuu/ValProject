@@ -29,6 +29,7 @@ class _BugreportWidgetState extends State<BugreportWidget>
   late BugreportModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -433,8 +434,12 @@ class _BugreportWidgetState extends State<BugreportWidget>
                             0.0, 24.0, 0.0, 12.0),
                         child: FFButtonWidget(
                           onPressed: () async {
+                            currentUserLocationValue =
+                                await getCurrentUserLocation(
+                                    defaultLocation: LatLng(0.0, 0.0));
+
                             await SupportRecord.collection
-                                .doc(currentUserDocument!.location!.toString())
+                                .doc(currentUserLocationValue!.toString())
                                 .set(createSupportRecordData(
                                   reportTitle: '',
                                   reportDesc: '',
