@@ -128,7 +128,7 @@ class _WeaponWidgetState extends State<WeaponWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                     child: Text(
-                      'Maps',
+                      'Weapon',
                       style: FlutterFlowTheme.of(context).labelLarge.override(
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,

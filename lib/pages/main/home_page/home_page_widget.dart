@@ -159,7 +159,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('Weapon');
+                          context.goNamed('Weapon');
                         },
                         text: 'WEAPONS',
                         options: FFButtonOptions(
